@@ -1,0 +1,1 @@
+when I moved the binary file output to the directory /usr/local/bin I made the binary file as golbal so i can run it from any path 
