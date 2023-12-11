@@ -12,6 +12,6 @@ if test -f .bashrc; then
 	echo LOCAL=$(whoami) >> ~/.bashrc
 	fi
 else
-	echo " not .bashtc file not exist"
+	echo ".bashtc file not exist"
 fi
 gnome-terminal

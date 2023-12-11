@@ -1,0 +1,22 @@
+#!/bin/bash
+sudo adduser --force-badnam  OmarMedhat
+sudo groupadd Foad
+sudo usermod -aG Foad OmarMedhat
+if grep -q "Foad" /etc/group; then
+echo "Group exist"
+else 
+echo "Group not exist"
+fi
+if grep -q "OmarMedhat" /etc/passwd; then
+echo "User exist"
+else 
+echo "User not exist"
+fi
+echo
+echo "User details:"
+cat /etc/passwd |  grep OmarMedhat
+
+echo 
+
+echo "Group details:"
+cat /etc/group | grep Foad
