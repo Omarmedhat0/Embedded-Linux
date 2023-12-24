@@ -12,8 +12,9 @@ After Installing arm-cortexa9_neon-linux-musleabihf Compiler from crosstool ng w
           * bin
         * *lib*
       * **bin**
-
+![image-20231221150521535](https://github.com/Omarmedhat0/Embedded-Linux/assets/108958395/01516535-8ad8-4fd7-8211-5511769cd8b9)
 ------
+
 
 
 
