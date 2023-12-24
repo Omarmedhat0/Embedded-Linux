@@ -11,30 +11,32 @@ be used in AVR applications.
 1. We need to add AVR compiler to our environment PATH to execute AVR commands so :
 
    1.    Open an editor for ./bashrc
+     
 
-      ```bash
-      nano ~/.bashrc
-      ```
+         ```bash
+         nano ~/.bashrc
+         ```
 
    2.  Add the PATH of AVR to environment PATH in .bashrc to load every time i open the terminal
+      
 
-      ```bash
-      export PATH=$PATH:~/x-tools/avr/bin
-      ```
+         ```bash
+         export PATH=$PATH:~/x-tools/avr/bin
+         ```
 
-   3. Apply the changes to my current session.
+   4. Apply the changes to my current session.
 
       ```bash
       source .bashrc 
       ```
 
-   4. Confirm that the directory is now in my PATH
+   5. Confirm that the directory is now in my PATH
 
       ```bash
       echo $PATH
       ```
 
-   5. Run avr-gcc as now we can run it from any place
+   6. Run avr-gcc as now we can run it from any place
 
       ```bash
       avr-gcc --version
