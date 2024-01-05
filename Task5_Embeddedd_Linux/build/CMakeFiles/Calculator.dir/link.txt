@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/Calculator.dir/main.c.o -o Calculator  liboperation.a 

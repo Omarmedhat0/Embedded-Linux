@@ -1,0 +1,4 @@
+/home/omar/ITI/Embedded_linux/Task3_Embedded_Linux/build/CMakeFiles/operation.dir
+/home/omar/ITI/Embedded_linux/Task3_Embedded_Linux/build/CMakeFiles/Calculator.dir
+/home/omar/ITI/Embedded_linux/Task3_Embedded_Linux/build/CMakeFiles/edit_cache.dir
+/home/omar/ITI/Embedded_linux/Task3_Embedded_Linux/build/CMakeFiles/rebuild_cache.dir
