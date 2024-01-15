@@ -1,13 +1,22 @@
-**Table of Contents**
-
-[TOC]
-
-
 # U-boot (BootLoader)
 
 U-Boot, short for Universal Boot Loader, is an open-source, primary boot loader used in embedded systems. It is designed to load and initialize the operating system or firmware on a device, typically in embedded systems such as single-board computers, development boards, and other devices with limited resources.
 
 U-Boot is widely used in the embedded industry and supports a variety of architectures, including ARM, MIPS, x86, and others. It provides a flexible and configurable environment that allows developers to customize the boot process according to the specific requirements of their target hardware.
+
+## Table of Contents
+
+- [1. Booting Sequence](#1-booting-sequence)
+  - [1.1. For x86 machines](#11-for-x86-machines)
+  - [1.2. For Rasp.Pi](#12-for-rasppi)
+  - [1.3. For Beaglebone](#13-for-beaglebone)
+- [2. Install U-boot](#2-install-u-boot)
+  - [2.1. Configure U-boot Machine](#21-configure-u-boot-machine)
+  - [2.2. Configure U-Boot](#22-configure-u-boot)
+  - [2.3. Build U-boot](#23-build-u-boot)
+- [3. SD card](#3-sd-card)
+  - [3.1. General Notes for virtual SD card](#31-general-notes-for-virtual-sd-card)
+- [4. References](#4-references)
 
 ## 1. Booting Sequence
 
@@ -317,3 +326,7 @@ For re-connect it or when restart the system
 sudo losetup -f --show --partscan sd.img
 ```
 
+## 4. References
+
+1. https://github.com/FadyKhalil/EmbeddedLinux/blob/main/3-Uboot/README.md
+2. https://github.com/anaskhamees/Embedded_Linux/tree/main/EmbeddedLinuxTasks/BootingSequence
