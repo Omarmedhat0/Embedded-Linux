@@ -12,15 +12,15 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
 * For x86 machines
 
-  ![image-20240114125351140](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114125351140.png)
+  ![image-20240114125351140](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114125351140.png)
 
 * For Rasp.Pi
 
-  ![image-20240114131920552](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114131920552.png)
+  ![image-20240114131920552](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114131920552.png)
 
 * For Beaglebone
 
-  ![image-20240114134109332](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114134109332.png)
+  ![image-20240114134109332](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114134109332.png)
 
 ## 2. Install U-boot
 
@@ -51,7 +51,7 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
   * **For Vexpress Cortex A9 (Qemu)**
 
-  ![image-20240114140507079](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114140507079.png)
+  ![image-20240114140507079](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114140507079.png)
 
   * Now Cross compiler needs  variables to be set before build U-boot according to my machine Cortex A9 so set them
 
@@ -76,21 +76,21 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
   make menuconfig
   ```
 
-  ![image-20240114143443910](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114143443910.png)
+  ![image-20240114143443910](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114143443910.png)
 
 - [x] Support **editenv** and **saveenv**
   * The **editenv** command in U-Boot is used to interactively edit the U-Boot environment variables. The U-Boot environment stores configuration settings that are used by the bootloader and potentially by the operating system that U-Boot boots.
   * In U-Boot, the **saveenv** command is used to save changes made to the U-Boot environment variables to non-volatile storage. The U-Boot environment variables store configuration settings that affect the behavior of the bootloader and, consequently, the boot process.
 
-> ![image-20240114143643445](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114143643445.png)`We can Search on any configuration by press '/' from keyboard and type the configuration on the pop up window like this image
+> ![image-20240114143643445](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114143643445.png)`We can Search on any configuration by press '/' from keyboard and type the configuration on the pop up window like this image
 
 * After searching 
 
-  ![image-20240114143942732](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114143942732.png)
+  ![image-20240114143942732](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114143942732.png)
 
 * So we go to the path which will be mentioned in this windows
 
-  ![Screenshot from 2024-01-11 12-33-47](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/Screenshot from 2024-01-11 12-33-47.png)
+  ![Screenshot from 2024-01-11 12-33-47](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/Screenshot from 2024-01-11 12-33-47.png)
 
 - [x] Enable a default value for **bootcmd** 
 
@@ -102,7 +102,7 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
     It has a hardware description for system which will be used
 
-    ![image-20240114150857009](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114150857009.png)
+    ![image-20240114150857009](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114150857009.png)
 
 - [x]  Support **bootd** and **run** .
   - **bootd** it's a a command which has the **bootcmd** Contents
@@ -110,7 +110,7 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
 * As we make in the previous Step 
 
-  ![image-20240114144809085](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114144809085.png)
+  ![image-20240114144809085](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114144809085.png)
 
 - [x] **Shell prompt**
 
@@ -120,7 +120,7 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
   * At Hush shell secondary prompt  user can edit PS2
 
-![image-20240114153855013](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114153855013.png)
+![image-20240114153855013](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114153855013.png)
 
 - [x] Store the environment variable inside file call **uboot.env**.
 
@@ -144,11 +144,11 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
     >
     > 1 : Represented fat partition number in the virtual SD card
 
-![image-20240114162315925](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114162315925.png)
+![image-20240114162315925](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114162315925.png)
 
 Now Exit and Save
 
-![Screenshot from 2024-01-14 16-25-34](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/Screenshot from 2024-01-14 16-25-34.png)
+![Screenshot from 2024-01-14 16-25-34](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/Screenshot from 2024-01-14 16-25-34.png)
 
 ### 	2.3. Build U-boot
 
@@ -158,7 +158,7 @@ Now Exit and Save
   make
   ```
 
-  You can find the generated u-boot file in the current directory u-boot![Screenshot from 2024-01-14 16-35-58](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/Screenshot from 2024-01-14 16-35-58.jpg)
+  You can find the generated u-boot file in the current directory u-boot![Screenshot from 2024-01-14 16-35-58](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/Screenshot from 2024-01-14 16-35-58.jpg)
 
 ## 3. SD card
 
@@ -187,7 +187,7 @@ dd if=/dev/zero of=sd.img bs=1M count=1024
 
 * This is the file genereted
 
-  ![image-20240114170433432](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114170433432.png)
+  ![image-20240114170433432](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114170433432.png)
 
 * Configure the Partition Table for the SD card
 
@@ -198,7 +198,7 @@ dd if=/dev/zero of=sd.img bs=1M count=1024
 
 * This windows will appear and the following configuration must be set
 
-  ![image-20240114171002670](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114171002670.png)
+  ![image-20240114171002670](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114171002670.png)
 
 |      Device      | Boot (Put * if partition is bootable) | Size | Type  |
 | :--------------: | :-----------------------------------: | :--: | :---: |
@@ -244,7 +244,7 @@ export DISK=/dev/loop13
   losetup -a | grep loop13
   ```
 
-![image-20240114173338591](/home/omar/ITI/Embedded_linux/Task7_Embedded_Linux/README.assets/image-20240114173338591.png)
+![image-20240114173338591](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114173338591.png)
 
 * Format Partition Table
 
