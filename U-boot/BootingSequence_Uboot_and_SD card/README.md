@@ -52,7 +52,7 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
   * **For Vexpress Cortex A9 (Qemu)**
 
-  ![image-20240114140507079](README.assets/image-20240114140507079.png)
+    ![image-20240114140507079](README.assets/image-20240114140507079.png)
 
   * Now Cross compiler needs  variables to be set before build U-boot according to my machine Cortex A9 so set them
 
@@ -206,10 +206,10 @@ dd if=/dev/zero of=sd.img bs=1M count=1024
 
   ![image-20240114171002670](README.assets/image-20240114171002670.png)
 
-|      Device      | Boot (Put * if partition is bootable) | Size | Type  |
-| :--------------: | :-----------------------------------: | :--: | :---: |
-|  sd.img1( boot)  |                   *                   | 200M | FAT16 |
-| sd.img2 (rootfs) |                                       | 823M | Linux |
+	|      Device      | Boot (Put * if partition is bootable) | Size | Type  |
+	| :--------------: | :-----------------------------------: | :--: | :---: |
+	|  sd.img1( boot)  |                   *                   | 200M | FAT16 |
+	| sd.img2 (rootfs) |                                       | 823M | Linux |
 
 * Then select **write** and type **yes**
 
@@ -250,7 +250,7 @@ export DISK=/dev/loop13
   losetup -a | grep loop13
   ```
 
-![image-20240114173338591](README.assets/image-20240114173338591.png)
+	![image-20240114173338591](README.assets/image-20240114173338591.png)
 
 * Format Partition Table
 
