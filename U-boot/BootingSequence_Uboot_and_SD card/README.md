@@ -12,7 +12,7 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
 * For x86 machines
 
-  ![image-20240114125351140](/home/omar/ITI/Embedded_linux/Embedded-Linux/U-boot/BootingSequence_Uboot_and_SD card/README.assets/image-20240114125351140.png)
+  ![image-20240114125351140](README.assets/image-20240114125351140.png)
 
 * For Rasp.Pi
 
