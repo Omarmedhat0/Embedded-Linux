@@ -2,6 +2,7 @@
 
 [TOC]
 
+
 # U-boot (BootLoader)
 
 U-Boot, short for Universal Boot Loader, is an open-source, primary boot loader used in embedded systems. It is designed to load and initialize the operating system or firmware on a device, typically in embedded systems such as single-board computers, development boards, and other devices with limited resources.
@@ -90,7 +91,9 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
 * So we go to the path which will be mentioned in this windows
 
-  ![Screenshot from 2024-01-11 12-33-47](README.assets/Screenshot from 2024-01-11 12-33-47.png)
+  ![Screenshot_from_2024-01-11_12-33-47.png](README.assets/Screenshot_from_2024-01-11_12-33-47.png)
+  
+  
 
 - [x] Enable a default value for **bootcmd** 
 
@@ -148,7 +151,7 @@ U-Boot is widely used in the embedded industry and supports a variety of archite
 
 Now Exit and Save
 
-![Screenshot from 2024-01-14 16-25-34](README.assets/Screenshot from 2024-01-14 16-25-34.png)
+![Screenshot_from_2024-01-14_16-25-34](README.assets/Screenshot_from_2024-01-14_16-25-34.png)
 
 ### 	2.3. Build U-boot
 
@@ -158,7 +161,7 @@ Now Exit and Save
   make
   ```
 
-  You can find the generated u-boot file in the current directory u-boot![Screenshot from 2024-01-14 16-35-58](README.assets/Screenshot from 2024-01-14 16-35-58.jpg)
+  You can find the generated u-boot file in the current directory u-boot![Screenshot_from_2024-01-14 16-35-58](README.assets/Screenshot_from_2024-01-14 16-35-58.jpg)
 
 ## 3. SD card
 
@@ -181,8 +184,11 @@ dd if=/dev/zero of=sd.img bs=1M count=1024
 ```dd```: This is a command used for copying and converting files and data. In this case, it's being used to create a file with zero-filled content. 
 
 ```if=/dev/zero```: The if flag specifies the input file, and /dev/zero is a special file in Unix-like systems that provides an endless stream of null bytes (zeros). 
+
 ```of=sd.img```: The of flag specifies the output file, and sd.img is the name of the output file that will be created. 
+
 ```bs=1M```: The bs flag sets the block size. In this case, it is set to 1 megabyte (1M). The block size determines how much data is read or written at a time. Setting it to 1 megabyte means that dd will write 1 megabyte of zeros at a time. 
+
 ```count=1024```: The count flag specifies the number of blocks to copy. In this case, it is set to 1024, so a total of 1024 blocks, each of size 1 megabyte, will be written. Therefore, the total size of the output file (sd.img) will be 1024 megabytes.
 
 * This is the file genereted
