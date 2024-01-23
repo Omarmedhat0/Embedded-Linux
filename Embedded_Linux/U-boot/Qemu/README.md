@@ -264,7 +264,7 @@ sudo apt-get install tftpd-hpa
     > - The line `inet 192.168.1.12/24` indicates that the IP address is `192.168.1.12`, and it's part of the `192.168.1.0/24` subnet.
     > - The `wlp2s0` interface represents a wireless connection.
 
-  * Make a script in U-boot directory with your machine IP it's name is `qemu-ifup` . t is responsible for configuring the Server network interface (TAP) as we have only on network interface for my pc so i  will make a virtual interface to use it between QEMU and TFTB server
+  * Make a script in U-boot directory with your machine IP it's name is `qemu-ifup` . It is responsible for configuring the Server network interface (TAP) as we have only on network interface for my pc so i  will make a virtual interface to use it between QEMU and TFTB server
 
     ```bash
     #!/bin/sh
@@ -287,15 +287,14 @@ sudo apt-get install tftpd-hpa
   * Run QEMU with the new virtual ethernet
 
     ```bash
-    #For readability but not write like that
-    sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic \
-    -kernel u-boot/u-boot \
-    -sd sd.img \
-    -net tap,script=./qemu-ifup -net nic
-    
     #Example for my case 
     sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic -kernel ITI/u-boot/u-boot -sd sd.img -net tap,script=ITI/u-boot/./qemu-ifup -net nic
     
+    #For readability 
+    sudo qemu-system-arm -M vexpress-a9 -m 128M -nographic \
+    -kernel ITI/u-boot/u-boot \
+    -sd sd.img \
+    -net tap,script=ITI/u-boot/./qemu-ifup -net nic
     ```
 
     > - `sudo`: Run the command with superuser privileges.
@@ -312,7 +311,7 @@ sudo apt-get install tftpd-hpa
   * Setup U-Boot IP address
 
     ```bash
-    Set the server ip address that we get from previous slide
+    #Set the server ip address that we get from previous slide
     setenv serverip [host ip address]
     
     #Apply ip address for embedded device
@@ -412,7 +411,7 @@ Now we make 2 Parts First we try to load from virtual SD Card the we try to load
   
 ## 6. References 
 
-- https://github.com/Omarmedhat0/EmbeddedLinux/tree/main/3-Uboot
+- https://github.com/FadyKhalil/EmbeddedLinux/tree/main/3-Uboot
 
 - https://github.com/anaskhamees/Embedded_Linux/tree/main/EmbeddedLinuxTasks/Bootloader/Booting_TFTP_Server
 - https://github.com/moelomda/Embedded-Linux/tree/main/Embedded_Linux_Concepts/U-Boot#boot-configuration-and-tftp-setup
