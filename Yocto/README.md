@@ -309,7 +309,10 @@ bitbake core-image-sato -k
 * Now we will use ```nmap``` command to search on the ip address for the target using inet of Ethernet 
 
   ```bash
-sudo nmap -sn 10.42.0.0/16
+  sudo nmap -sn 10.42.0.0/16
+  ```
+
+  
 
 ![image-20240528185923480](README.assets/image-20240528185923480.png)
 
