@@ -310,9 +310,8 @@ bitbake core-image-sato -k
 
   ```bash
 sudo nmap -sn 10.42.0.0/16
-```
 
-​	![image-20240528185923480](README.assets/image-20240528185923480.png)
+![image-20240528185923480](README.assets/image-20240528185923480.png)
 
 * connect on target using ssh 
 
@@ -321,6 +320,8 @@ sudo nmap -sn 10.42.0.0/16
   ```
 
   ![image-20240528190048622](README.assets/image-20240528190048622.png)
+
+  
 
 * Now you are connected with the target 
 
