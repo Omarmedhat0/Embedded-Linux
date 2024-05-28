@@ -164,6 +164,7 @@ git clone -b kirkstone https://github.com/meta-qt5/meta-qt5.git
   ```bash
   #For OpenSSH server and SFTP server for secure file transfer 
   #For Rsync for fast incremental file transfer
+  #For enable vnc server to show the develpment state throm loacal machine use x11vnc
   EXTRA_IMAGE_FEATURES += "ssh-server-openssh"
   IMAGE_INSTALL:append = " openssh-sftp-server rsync x11vnc "
   #For Bluetooth and WiFi support dependences
@@ -247,4 +248,108 @@ bitbake core-image-sato -k
   cd ~/ITI/yocto/poky/build/tmp/deploy/images/raspberrypi3-64/
   ```
 
-   
+   ![image-20240528181122215](README.assets/image-20240528181122215.png)
+
+### Burn The image to SD Card
+
+* from al files the you can see in th build directory we want the file which ended with extention **wic.bz2** to use it for burning the image to SD card 
+
+  ![image-20240528181550707](README.assets/image-20240528181550707.png)
+
+* De compress it according to it's name(this name my change according to your image name put the extension is unique and will find one file with it  ) to .wic
+
+  ```bash
+  bunzip2 "secure-sync-shield-raspberrypi3-64-20240520142954.rootfs.wic.bz2" -d -c > "secure-sync-shield-raspberrypi3-64.rootfs.wic"
+  ```
+
+* Now you de compress the binaries and you will find it name at the same directory with  "Image Name".wic example **secure-sync-shield-raspberrypi3-64.rootfs.wic** now put your memory card into the build machine 
+
+  * First the should know the name of the memory card for interfacing using ``` lsblk``` command
+
+    ![image-20240528183107472](README.assets/image-20240528183107472.png)
+
+    You can notice that it's name is ***mmcblk0***
+
+  * int the directory for the build you will use ```dd``` commnad for  for build the image on **mmcblk0**
+
+  ```bash
+  sudo dd if="secure-sync-shield-raspberrypi3-64.rootfs.wic" of="/dev/mmcblk0" bs=4M status=progress
+  ```
+  
+  * Now you fill find that you have the SD is divided into 2 portions  boot and root and they have the image
+  
+    ![image-20240528184027669](README.assets/image-20240528184027669.png)
+
+### Connect with the target for the first time using ssh 
+
+* Put SD card in Raspberrypi and connect Raspberrypi with power source and connect an Ethernet wire between it and the local machine 
+
+* On Ubuntu you need to make some configurations for Ethernet port to establish the connection successfully   
+
+  * Choose wired connection -> wired settings
+
+    ![image-20240528184816977](README.assets/image-20240528184816977.png)
+
+  * Click on setting icon
+
+    ![image-20240528185012989](README.assets/image-20240528185012989.png)
+
+  * change IPv4 and IPv6  method yo shared to other computers 
+
+    ![image-20240528185116716](README.assets/image-20240528185116716.png)
+
+* Now we need to know IP address for Ethernet interface by ```ifconfig``` command 
+
+  ```bash
+  ifconfig
+  ```
+
+   ![image-20240528185755159](README.assets/image-20240528185755159.png)
+
+* Now we will use ```nmap``` command to search on the ip address for the target using inet of Ethernet 
+
+  ```bash
+sudo nmap -sn 10.42.0.0/16
+```
+
+​	![image-20240528185923480](README.assets/image-20240528185923480.png)
+
+* connect on target using ssh 
+
+  ```bash
+  ssh root@10.42.0.151
+  ```
+
+  ![image-20240528190048622](README.assets/image-20240528190048622.png)
+
+* Now you are connected with the target 
+
+### Initiate VNC server 
+
+You have to steps 
+
+* For Target : 
+
+  * Initiate display 0 by this command to use it from developing machine
+
+    ```bash
+    x11vnc --display :0 --forever
+    ```
+
+     ![image-20240528190557158](README.assets/image-20240528190557158.png)
+
+* For developing machine 
+
+  * Download VNC viewer from this link and setup it 
+
+    https://www.realvnc.com/en/connect/download/viewer/
+
+  * Connect with the target using it by the following steps : 
+
+    * Inter the Raspberrypi following by :0 in the search bar and click enter 
+
+      ![image-20240528191204399](README.assets/image-20240528191204399.png)
+
+    * Click continue and now you can see a real screen form the target output 
+
+      ![image-20240528191323922](README.assets/image-20240528191323922.png)
